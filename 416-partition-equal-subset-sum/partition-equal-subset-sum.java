@@ -14,6 +14,7 @@ class Solution {
         for(int i=n-1;i>=0;i--){
             HashSet<Integer> tempset=new HashSet<>();
             for(int j:dp){
+                if(j+nums[i]==target)return true;
                 tempset.add(j+nums[i]);
                 tempset.add(j);
             }
