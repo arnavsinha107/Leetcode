@@ -1,5 +1,5 @@
 class Solution {
-    Set<List<Integer>> ans=new HashSet<>();
+    List<List<Integer>> ans=new ArrayList<List<Integer>>();
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         Arrays.sort(nums);
         build(nums,0,new ArrayList<>());
@@ -13,6 +13,9 @@ class Solution {
         curr.add(nums[k]);
         build(nums,k+1,curr);
         curr.remove(curr.size()-1);
+        while(k+1<nums.length && nums[k+1]==nums[k]){
+            k++;
+        }
         build(nums,k+1,curr);
 
     }
