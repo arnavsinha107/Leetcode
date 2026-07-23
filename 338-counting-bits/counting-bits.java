@@ -1,18 +1,10 @@
 class Solution {
     public int[] countBits(int n) {
-        int[] ans=new int[n+1];
-        for(int i=0;i<=n;i++){
-            ans[i]=hammingWeight(i);
-
+        int[] dp=new int[n+1];
+        dp[0]=0;
+        for(int i=1;i<=n;i++){
+            dp[i]=dp[i>>1] + (i & 1);
         }
-        return ans;
-    }
-    public int hammingWeight(int n) {
-        int count=0;
-        while(n!=0){
-            count++;
-            n &= (n-1);
-        }
-        return count;
+        return dp;
     }
 }
