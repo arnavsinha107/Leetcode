@@ -44,7 +44,7 @@ class Solution {
         }
         int ans=0;
         for(int i=1;i<dist.length;i++){
-            System.out.print(dist[i]+" ");
+            //System.out.print(dist[i]+" ");
             ans=Math.max(ans,dist[i]);
         }
         return ans==Integer.MAX_VALUE?-1:ans;
