@@ -25,11 +25,11 @@ class Solution {
             }
         }
         boolean[] vis=new boolean[points.length];
-
+        int count = 0;
         PriorityQueue<pair> pq=new PriorityQueue<>((a,b)->a.weight-b.weight);
         pq.offer(new pair(0,0));
         int cost=0;
-        while(!pq.isEmpty()){
+        while(!pq.isEmpty()&&count<points.length){
             pair curr=pq.poll();
             int node=curr.node;
             int weight=curr.weight;
@@ -37,6 +37,7 @@ class Solution {
                 continue;
             }
             vis[node]=true;
+            count++;
             cost+=weight;
             for(int[] edge:adj.get(node)){
                 int next=edge[0];
