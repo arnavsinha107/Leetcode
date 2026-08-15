@@ -10,7 +10,7 @@ class Solution {
             
             if(nums[i]-nums[j]==Math.pow(-1,i+1)&& (curr>0 || nums[i]-nums[j]==1)){
                 if(flag==0){
-                    System.out.println(nums[i]);
+                    //System.out.println(nums[i]);
                     curr++;
                 }
                 else {
@@ -20,7 +20,7 @@ class Solution {
             }
             else if(nums[i]-nums[j]==Math.pow(-1,i) && (curr>0 || nums[i]-nums[j]==1)){
                 if(flag==1){
-                    System.out.println(nums[i]-nums[j]);
+                    //System.out.println(nums[i]-nums[j]);
                     curr++;
                 }
                 else {
