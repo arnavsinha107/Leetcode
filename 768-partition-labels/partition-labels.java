@@ -7,24 +7,19 @@ class Solution {
         ArrayList<Integer> ans=new ArrayList<>();
         int i=0;
         while(i<s.length()){
-            int count=0;
-            char a=s.charAt(i);
-            int b=map.get(a);
-            count += b+1;
+            int start=i;
+            int b=map.get(s.charAt(i));
             for(int j=i;j<=b;j++){
                 if(map.get(s.charAt(j))>b){
                     b=map.get(s.charAt(j));
-                    count = b+1;
 
                 }
             }
-            i=count;
-            ans.add(count);
+            
+            ans.add(b-start+1);
+            i=b+1;
         }
-        for (i = ans.size() - 1; i > 0; i--) {
-            int difference = ans.get(i) - ans.get(i - 1);
-            ans.set(i, difference); 
-        }
+
         return ans;
 
     }
