@@ -15,7 +15,7 @@ class Solution {
                 if(map.get(s.charAt(j))>b){
                     b=map.get(s.charAt(j));
                     count = b+1;
-                    System.out.println(count);
+
                 }
             }
             i=count;
